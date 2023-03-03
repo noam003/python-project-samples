@@ -30,39 +30,10 @@ def reset():
         shutil.copy('french_words.csv', 'french_copy.csv')
     else:
         shutil.copy('french_words.csv', 'french_copy.csv')
-    # clear screen
+ 
 
-"""
-def start_clicker():
-    global pop
-    pop = Toplevel(window)
-    pop.title("Hi")
-    pop.geometry(800, 600)
-    pop.config(bg="green")
-
-    global me
-    me = PhotoImage("result.png")
-    pop_label = Label(text="Rules. Proceeds?", bg="green", fg="white", font=(FONT_NAME, 14))
-    pop_label.grid(column=1, row=1)
-    my_frame = Frame(pop, bg="green")
-    my_frame.grid(column=1, row=2)
-
-    me_pic = Label(my_frame, image=me, borderwidth=0)
-    me_pic.grid(column=0, row=0)
-
-    yes = Button(my_frame, text="START", command=lambda: start("yes"), bg="orange")
-    yes.grid(column=0, row=1)
-
-    no = Button(my_frame, text="NO", command=lambda: start("no"), bg="yellow")
-    no.grid(column=0, row=2)
-"""
-#def start(option):
 def start():
-    # pop.destroy()
-    # if option == "yes":
-        # clicked()
-    # else:
-        # None
+
     clicked()
 
 
@@ -125,7 +96,6 @@ canvas.grid(row=0, column=0, columnspan=2)
 
 lang_text = canvas.create_text(400, 150, text="French", font=(FONT_NAME, 40, "italic"), fill="black")
 
-# ______MISSING CSV FILE PART _________#
 word = canvas.create_text(400, 263, text="", font=(FONT_NAME, 60, "bold"), fill="black")
 
 start_img = PhotoImage(file="start.png")
@@ -143,9 +113,5 @@ correct_button.grid(row=1, column=1)
 reset_img = PhotoImage(file="reset.png")
 reset_button = Button(image=reset_img, highlightthickness=0, borderwidth=0, command=reset, bg=BACKGROUND_COLOR)
 reset_button.grid(row=0, column=2)
-
-# to_start = messagebox.askokcancel(title="Flash Cards for French", message="rules. Ready?")
-# if to_start:
-# start()
 
 window.mainloop()
