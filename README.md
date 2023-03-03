@@ -13,4 +13,4 @@ projects with Pandas, Beautiful Soup, Selenium, Request, Flask, NumPy, Scikit Le
 .
 
 
-*Italic Text* All projects are based on UDEMY Python Pro Bootcamp Challenges. 
+_All projects are based on UDEMY Python Pro Bootcamp Challenges._
