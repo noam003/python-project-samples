@@ -8,9 +8,7 @@
 projects with Pandas, Beautiful Soup, Selenium, Request, Flask, NumPy, Scikit Learn, Plotly, and Matplotlib
 
 
-.
-.
-.
+___
 
 
 _All projects are based on UDEMY Python Pro Bootcamp Challenges._
