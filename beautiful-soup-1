@@ -1,0 +1,34 @@
+from bs4 import BeautifulSoup
+import requests
+
+# the website is currently not ordered by upvotes, but rather by date
+# I will scrape it find most upvoted
+
+response = requests.get("https://news.ycombinator.com/news")
+yc_web_page = response.text
+soup = BeautifulSoup(yc_web_page, "html.parser")
+article_tags = soup.find_all(name="span", class_="titleline")
+# for article tag use get_text()
+all_urls = soup.find_all(name="span", class_="titleline")
+# for url use .get("href")
+scores = soup.find_all(name="span", class_="score")
+# for scores use .get_text()
+
+article_names = []
+article_urls = []
+article_scores = []
+
+for name in article_tags:
+    article_names.append(name.get_text())
+for url in all_urls:
+    first_link = url.find("a")
+    link=first_link.get("href")
+    article_urls.append(link)
+for score in scores:
+    each_score = score.get_text()
+    score_value = int(each_score.split()[0])
+    article_scores.append(score_value)
+
+max_score = max(article_scores)
+index = article_scores.index(max_score)
+print(f"Read {article_names[index]} with link: {article_urls[index]} with {article_scores[index]} upvotes.")
