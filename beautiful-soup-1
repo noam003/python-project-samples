@@ -1,3 +1,5 @@
+# Ⓒ Noa Margolin 2023
+
 from bs4 import BeautifulSoup
 import requests
 
